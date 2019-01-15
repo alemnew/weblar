@@ -1,0 +1,20 @@
+FROM monroe/base:web
+
+MAINTAINER  Alemnew.Asrese@aalto.fi
+ENV APT_OPTS -y --allow-downgrades --allow-remove-essential --allow-change-held-packages --no-install-recommends --no-install-suggests --allow-unauthenticated
+
+RUN export DEBIAN_FRONTEND=noninteractive \
+    && apt-get update \
+    && apt-get install ${APT_OPTS} openjdk-8-jre \
+    && apt-get install -y ffmpeg \
+    && apt-get install -y imagemagick \
+    && apt-get update ${APT_OPTS} --fix-missing \
+    && apt-get clean ${APT_OPTS} \
+    && apt-get autoremove ${APT_OPTS} \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc /usr/share/man /usr/share/locale /var/cache/debconf/*-old firefox.tbz2 geckodriver.tgz dumb-init.deb
+
+RUN mkdir -p /opt/weblar
+COPY files/* /opt/weblar/
+RUN mv /opt/weblar/chromedriver /usr/bin/chromedriver 
+
+ENTRYPOINT ["dumb-init", "--", "/bin/bash", "/opt/weblar/start.sh"]
