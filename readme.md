@@ -10,10 +10,6 @@ Measures the rendeirng time a website in a browser window.
 
 ** Install in the docker container using the docker script. 
 
-# Name 
-1. WebLAR 
-2. WebCeLAR
-3. WebMoLAR
 
 # How to calculate the metrics 
 - dom = t.domContentLoadedEventEnd - t.navigationStart;
