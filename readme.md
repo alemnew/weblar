@@ -1,5 +1,5 @@
 
-# Web Performance: in terms  Web Latency, ATF and Rendering Time  
+# Web Performance: in terms  Web Latency, ATF and Rendering Time
 Measures the rendeirng time a website in a browser window. 
 
 # Requirements 
@@ -11,9 +11,9 @@ Measures the rendeirng time a website in a browser window.
 ** Install in the docker container using the docker script. 
 
 # Name 
-1. WebLAR 
-2. WebCeLAR
-3. WebMoLAR
+WebLAR 
+[src](src/) contains java source files for recording screen based on selenium
+framework. 
 
 # How to calculate the metrics 
 - dom = t.domContentLoadedEventEnd - t.navigationStart;

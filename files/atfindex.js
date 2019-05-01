@@ -137,6 +137,10 @@ function calculateATF(){
     stats.web_complexity = web_complexity;
     stats.count_pixels   = count_pixels;
 
+    var paintTiming = {};
+|    paintTiming.first_paint =  performance.getEntriesByName("first-paint")[0]['startTime'];
+|    paintTiming.first_contentfull_paint = performance.getEntriesByName("first-contentful-paint")[0]['startTime'];
+|
     atf.atf            = Math.max( stats.last_img, stats.last_css, stats.last_img);
     atf.atf_integral   = stats.atf_integral;
     atf.atf_instant    = stats.atf_instant;
@@ -149,6 +153,7 @@ function calculateATF(){
     atf.bi_atf         = index_metric(resources, stats.dom, stats.atf, metric='bytes');
     atf.img_atf        = screenimgs.length;
     atf.screenRect     = screenRect;
+    atf.paintTiming    = paintTiming 
     stats.atf = atf;
 
     delete stats.atf_integral;
