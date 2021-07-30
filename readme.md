@@ -12,7 +12,7 @@ Measures the rendeirng time a website in a browser window.
 
 # Name 
 WebLAR 
-[src](src/) contains java source files for recording screen based on selenium framework. 
+[files/src](files/src/) contains java source files for recording screen based on selenium framework. 
 
 # How to calculate the metrics 
 - dom = t.domContentLoadedEventEnd - t.navigationStart;
