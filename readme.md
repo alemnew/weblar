@@ -10,13 +10,9 @@ Measures the rendeirng time a website in a browser window.
 
 ** Install in the docker container using the docker script. 
 
-<<<<<<< HEAD
 # Name 
 WebLAR 
-[src](src/) contains java source files for recording screen based on selenium
-framework. 
-=======
->>>>>>> 816fbae0df6965e3aa93fc73d58ff446e60ab02c
+[src](src/) contains java source files for recording screen based on selenium framework. 
 
 # How to calculate the metrics 
 - dom = t.domContentLoadedEventEnd - t.navigationStart;
